@@ -1,15 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MasterMoney.MainPage">
-    <StackLayout Padding="5">
-        <Label Text = "Ya korobko" TextColor="Azure" FontSize="25" FontAttributes="Italic" HorizontalTextAlignment="Center"></Label>
-        <Entry IsPassword="False" Placeholder="Googa buga"></Entry>
-        <StackLayout Orientation="Horizontal">
-            <Label Text=" Poopa lupa" FontSize="25"></Label>
-            <CheckBox x:Name="checkBox"></CheckBox>
+             xmlns:local="clr-namespace:MasterMoney"
+             x:Class="MasterMoney.MainPage"
+             Title="MasterMoney ">
+    <StackLayout Padding="5" BackgroundColor="#303030">
+        <Label Text="Группа" FontSize="{x:Static local:MainPage.LABEL_FONT}"
+               VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
+        <StackLayout Orientation="Horizontal" 
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize ="{x:Static local:MainPage.LABEL_FONT}"/>
+            <Label Text=":" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
         </StackLayout>
-        <Button x:Name="button" Text="Push"></Button>
-        <Button Clicked="Button_Clicked_1" Text="Ya uhozhu"></Button>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Label Text=":" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Label Text=":" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+        </StackLayout>
+        <Label Text="Полуфинал" FontSize = "{x:Static local:MainPage.LABEL_FONT}"
+               VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Label Text=":" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+        </StackLayout>
+        <Label Text="Финал/Игра за 3-е " FontSize = "{x:Static local:MainPage.LABEL_FONT}"
+               VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Label Text=":" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+            <Entry Placeholder="{x:Static local:MainPage.SCORE_PLACEHOLDER}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:MainPage.LABEL_FONT}"/>
+        </StackLayout>
+        <StackLayout Margin="5" BackgroundColor="#404040">
+            <Label Text="Дата" TextColor="#FA4081" FontSize="{x:Static local:MainPage.LABEL_FONT}"
+                   VerticalOptions="Center" HorizontalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" 
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         >
+                <Entry Placeholder="дд.мм.гггг"
+                       FontSize ="{x:Static local:MainPage.LABEL_FONT}"
+                       VerticalOptions="Center" HorizontalOptions="Center"/>
+                <CheckBox x:Name="dataCheckBox" IsChecked="true"/>
+                <Label Text="Сегодня" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </StackLayout>
+            <Button CornerRadius="5" Text="Добавить турнир" FontSize = "{x:Static local:MainPage.BUTTON_FONT}"
+                    Margin="{x:Static local:MainPage.BUTTON_MARGIN}"/>
+            <Button CornerRadius="5" Text="Все турниры" FontSize = "{x:Static local:MainPage.BUTTON_FONT}"
+                    Margin="{x:Static local:MainPage.BUTTON_MARGIN}"/>
+            <Button CornerRadius="5" Text="Призовые" FontSize = "{x:Static local:MainPage.BUTTON_FONT}"
+                    Margin="{x:Static local:MainPage.BUTTON_MARGIN}"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

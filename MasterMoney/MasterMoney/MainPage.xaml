@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterMoney.MainPage">
+    <StackLayout Padding="5">
+        <Label Text = "Ya korobko" TextColor="Azure" FontSize="25" FontAttributes="Italic" HorizontalTextAlignment="Center"></Label>
+        <Entry IsPassword="False" Placeholder="Googa buga"></Entry>
+        <StackLayout Orientation="Horizontal">
+            <Label Text=" Poopa lupa" FontSize="25"></Label>
+            <CheckBox x:Name="checkBox"></CheckBox>
+        </StackLayout>
+        <Button x:Name="button" Text="Push"></Button>
+        <Button Clicked="Button_Clicked_1" Text="Ya uhozhu"></Button>
+    </StackLayout>
+</ContentPage>

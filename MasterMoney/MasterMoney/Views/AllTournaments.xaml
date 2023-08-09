@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterMoney.Views.AllTournaments"
+             xmlns:local="clr-namespace:MasterMoney">
+    <StackLayout BackgroundColor="#303030">
+        <ScrollView >
+            <CollectionView x:Name="сollectionView"
+                            Margin="0">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="0"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Text}"
+                                   TextColor="Black"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding Date}"
+                                   TextColor="Silver"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+        <Button Text="Новый турнир" CornerRadius="10" FontSize = "{x:Static local:Constants.BUTTON_FONT}" 
+                        Padding="20, 20, 20, 10" BackgroundColor="#616161" Margin="{x:Static local:Constants.BUTTON_MARGIN}"
+                        TextColor="Cyan" Clicked="AddButton_Clicked" VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ContentPage>

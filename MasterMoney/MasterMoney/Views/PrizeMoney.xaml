@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterMoney.Views.PrizeMoney"
+             xmlns:local="clr-namespace:MasterMoney">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#303030" Padding="20, 10, 20, 20" >
+            <Image Source="MasterPrizeMoney.jpg" VerticalOptions="CenterAndExpand"/>
+            <Button Text="Назад" CornerRadius="10" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                        Padding="20, 10, 20, 20" BackgroundColor="#616161" 
+                        TextColor="#FA4081" Clicked="Button_Clicked" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

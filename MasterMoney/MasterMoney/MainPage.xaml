@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MasterMoney"
              x:Class="MasterMoney.MainPage"
-             Title="MasterMoney ">
+             Title="MasterMoney">
     <StackLayout Padding="5" BackgroundColor="#303030" Spacing="2   ">
         <Label Text="Группа" FontSize="{x:Static local:MainPage.LABEL_FONT}"
                VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>

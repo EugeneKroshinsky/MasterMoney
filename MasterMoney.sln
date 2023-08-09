@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMoney.Android", "Mast
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMoney.iOS", "MasterMoney\MasterMoney.iOS\MasterMoney.iOS.csproj", "{FF72992F-3CF4-493C-A64D-85149D54CE06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMoney", "MasterMoney\MasterMoney\MasterMoney.csproj", "{0DAEBF52-A160-4727-8CEC-C271BEEE82B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterMoney", "MasterMoney\MasterMoney\MasterMoney.csproj", "{0DAEBF52-A160-4727-8CEC-C271BEEE82B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

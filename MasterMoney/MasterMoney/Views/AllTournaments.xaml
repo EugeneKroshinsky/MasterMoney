@@ -27,6 +27,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
+        
         <Button Text="Новый турнир" CornerRadius="10" FontSize = "{x:Static local:Constants.BUTTON_FONT}" 
                         Padding="20, 20, 20, 10" BackgroundColor="#616161" Margin="{x:Static local:Constants.BUTTON_MARGIN}"
                         TextColor="Cyan" Clicked="AddButton_Clicked" VerticalOptions="EndAndExpand" />

@@ -3,115 +3,125 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MasterMoney"
              x:Class="MasterMoney.Views.AddPage">
-    <ContentPage.Content>
-        <StackLayout Padding="5" BackgroundColor="#303030" Spacing="2">
-            <Label Text="Группа" FontSize="{x:Static local:Constants.LABEL_FONT}"
+    <StackLayout Padding="5" BackgroundColor="#303030" Spacing="2">
+        <Label Text="Группа" FontSize="{x:Static local:Constants.LABEL_FONT}"
                VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
-            <StackLayout Orientation="Horizontal" 
+        <StackLayout Orientation="Horizontal"  
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
-                   TextColor="white" PlaceholderColor="#969696"
+            <Entry TextChanged="Entry_TextChanged_1" x:Name="entry1"
+                   Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}" 
+                   TextColor="white" PlaceholderColor="#969696" 
                    Keyboard="Numeric" FontSize ="{x:Static local:Constants.LABEL_FONT}"/>
-                <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                    TextColor="#969696"/>
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
-                   TextColor="white" PlaceholderColor="#969696"
-                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal"
+            <Entry x:Name="label1" 
+                   TextColor="white" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+                   Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}" 
+                   Keyboard="Numeric" PlaceholderColor="#969696" IsEnabled="False"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
-                   TextColor="white" PlaceholderColor="#969696"
+            <Entry TextChanged="Entry_TextChanged_2" x:Name="entry2"
+                   Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+                   TextColor="white" PlaceholderColor="#969696" 
                    Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-                <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                    TextColor="#969696"/>
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
-                   TextColor="white" PlaceholderColor="#969696"
-                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+                   TextColor="white" PlaceholderColor="#969696"  x:Name="label2"
+                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}" IsEnabled="False"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+            <Entry TextChanged="Entry_TextChanged_3" x:Name="entry3"
+                   Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}" 
                    TextColor="white" PlaceholderColor="#969696"
                    Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-                <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                    TextColor="#969696"/>
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
-                   TextColor="white" PlaceholderColor="#969696"
-                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-            </StackLayout>
-            <Label Text="Полуфинал" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+                   TextColor="white" PlaceholderColor="#969696"  x:Name="label3"
+                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}" IsEnabled="False"/>
+        </StackLayout>
+
+
+        <Label Text="Полуфинал" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
-            <StackLayout Orientation="Horizontal"
+        <StackLayout Orientation="Horizontal"
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+                   TextChanged="Entry_TextChanged_4" x:Name="entry4"
                    TextColor="white" PlaceholderColor="#969696"
                    Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-                <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                    TextColor="#969696"/>
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
                    TextColor="white" PlaceholderColor="#969696"
-                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-            </StackLayout>
-            <Label Text="Финал/Игра за 3-е " FontSize = "{x:Static local:Constants.LABEL_FONT}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+                   x:Name="label4" IsEnabled="False"/>
+        </StackLayout>
+
+
+        <Label Text="Финал/Игра за 3-е " FontSize = "{x:Static local:Constants.LABEL_FONT}"
                VerticalOptions="Center" HorizontalOptions="Center" TextColor="Cyan"/>
-            <StackLayout Orientation="Horizontal"
+        <StackLayout Orientation="Horizontal"
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+                   TextChanged="Entry_TextChanged_5" x:Name="entry5"
                    TextColor="white" PlaceholderColor="#969696"
                    Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-                <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+            <Label Text=":" FontSize = "{x:Static local:Constants.LABEL_FONT}"
                    TextColor="#969696"/>
-                <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
+            <Entry Placeholder="{x:Static local:Constants.SCORE_PLACEHOLDER}"
                    TextColor="white" PlaceholderColor="#969696"
-                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"/>
-            </StackLayout>
-            
-            <Frame  Margin="5" BackgroundColor="#404040" CornerRadius="10">
-                <StackLayout>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Label Text="Дата" TextColor="#FA4081" FontSize="{x:Static local:Constants.LABEL_FONT}"
+                   Keyboard="Numeric" FontSize = "{x:Static local:Constants.LABEL_FONT}"
+                   x:Name="label5" IsEnabled="False"/>
+        </StackLayout>
+
+        <Frame  Margin="5" BackgroundColor="#404040" CornerRadius="10">
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Дата" TextColor="#FA4081" FontSize="{x:Static local:Constants.LABEL_FONT}"
                        VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
-                        <Label Text="Лига" TextColor="#FA4081" FontSize="{x:Static local:Constants.LABEL_FONT}"
+                    <Label Text="Лига" TextColor="#FA4081" FontSize="{x:Static local:Constants.LABEL_FONT}"
                        VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" />
-                        <Entry Placeholder="дд.мм.гггг" TextColor="white" PlaceholderColor="#969696"
+                    <Entry Placeholder="дд.мм.гггг" TextColor="white" PlaceholderColor="#969696"
                            FontSize ="{x:Static local:Constants.LABEL_FONT}" x:Name="dateEntry"
                            VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1"/>
-                        <Picker x:Name="picker" FontSize="{x:Static local:Constants.LABEL_FONT}"
+                    <Picker x:Name="picker" FontSize="{x:Static local:Constants.LABEL_FONT}" TextColor="white"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" 
                             Grid.Column="1" Grid.Row="1" Title="Выберите" HorizontalTextAlignment="Center">
-                            <Picker.Items>
-                                <x:String>СуперЛига</x:String>
-                                <x:String>Лига А</x:String>
-                                <x:String>Лига B</x:String>
-                                <x:String>Лига С</x:String>
-                            </Picker.Items>
-                        </Picker>
-                    </Grid>
-                    <Button CornerRadius="10" Text="Добавить турнир" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                        <Picker.Items>
+                            <x:String>СуперЛига</x:String>
+                            <x:String>Лига А</x:String>
+                            <x:String>Лига B</x:String>
+                            <x:String>Лига С</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+                <Button CornerRadius="10" Text="Добавить турнир" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
                         Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161" 
                         TextColor="Cyan" Clicked="ButtonAddTournament_Clicked"/>
-                    <Button CornerRadius="10" Text="Призовые" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                <Button CornerRadius="10" Text="Призовые" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
                         Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161"
                         TextColor="White" Clicked="ButtonPrizeMoney_Clicked"/>
-                    <Button CornerRadius="10" Text="Назад" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                <Button CornerRadius="10" Text="Назад" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
                         Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161"
                         TextColor="#FA4081" Clicked="ButtonCancel_Clicked"/>
-                </StackLayout>
-            </Frame>
-        </StackLayout>
-    </ContentPage.Content>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 </ContentPage>

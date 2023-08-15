@@ -28,7 +28,8 @@ namespace MasterMoney
         }
         public App()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            App.Current.UserAppTheme = OSAppTheme.Dark;
             MainPage = new AppShell();
             NavigationPage.SetHasNavigationBar(this, false);
         }

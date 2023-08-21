@@ -42,7 +42,7 @@ namespace MasterMoney.Views
         {
             InitializeComponent();
             BindingContext = new Notes();
-            dateEntry.Text = DateTime.Now.ToString("dd.MM.yy");
+            dateEntry.Date = DateTime.Now;
         }
         protected override void OnAppearing()
         {
@@ -50,26 +50,40 @@ namespace MasterMoney.Views
         }
         private async void ButtonAddTournament_Clicked(object sender, EventArgs e)
         {
-            int result = 0;
-            tournamentDateString = dateEntry.Text;
-            /*string reg = @"(0?[1-9])|([12][0-9])|(3[01])\.((0?[1-9])|(1[012]))\.\d\d"; 
-            if (!Regex.IsMatch(tournamentDateString, reg))
+            Notes note = Calculate();
+            if (note is null)
+            {
+                return;
+            }
+            else
+            {
+                await App.NotesDB.SaveNoteAsync(note);
+                await Shell.Current.GoToAsync("..");
+            }
+        }
+        private Notes Calculate()
+        {
+            tournamentDateString = dateEntry.Date.ToString("dd.MM.yy");
+
+            /*string pattern = @"^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{2}$";
+
+            if (!Regex.IsMatch(tournamentDateString, pattern))
             {
                 DisplayAlert("Ошибка при вводе даты", "Недопустимое значение при вводе, убедитесь, что дата введена правильно", "ОK");
-                return;
+                return null;
             }*/
 
             if (!(int.TryParse(entry1.Text, out int res1) && int.TryParse(entry2.Text, out int res2) &&
             int.TryParse(entry3.Text, out int res3) && int.TryParse(entry4.Text, out int res4) && int.TryParse(entry5.Text, out int res5)))
             {
                 DisplayAlert("Ошибка при вводе сетов", "Недопустимое значение при вводе, убедитесь, что введённые сеты являются целыми числами ", "ОK");
-                return;
+                return null;
             }
 
             if (label1.Text.Equals("?") || label2.Text.Equals("?") || label3.Text.Equals("?") || label4.Text.Equals("?") || label5.Text.Equals("?"))
             {
                 DisplayAlert("Ошибка при вводе сетов", "Недопустимое значение при в   воде, убедитесь, что введённые сеты больше или равны 0 и меньше или равны 4 ", "ОK");
-                return;
+                return null;
             }
 
             switch (picker.SelectedIndex)
@@ -88,7 +102,7 @@ namespace MasterMoney.Views
                     break;
                 default:
                     DisplayAlert("Ошибка при выборе лиги", "Пожалуйста, выберите лигу", "ОK");
-                    return;
+                    return null;
             }
 
             groupMatch1 = new MasterMoney.GameLogic.Match(res1, Coefficients[0], Coefficients[1]);
@@ -97,31 +111,22 @@ namespace MasterMoney.Views
             semifinal = new MasterMoney.GameLogic.Match(res4, Coefficients[2], Coefficients[3]);
             final = new MasterMoney.GameLogic.FinalMatch(res5, semifinal, Coefficients[4], Coefficients[5], Coefficients[6], Coefficients[7]);
 
-            result = (groupMatch1.matchMoney() + groupMatch2.matchMoney() + groupMatch3.matchMoney() + semifinal.matchMoney() + final.matchMoney());
+            int result = (groupMatch1.matchMoney() + groupMatch2.matchMoney() + groupMatch3.matchMoney() + semifinal.matchMoney() + final.matchMoney());
+
             string textResult = result.ToString() + " BYN " + picker.Items[picker.SelectedIndex].ToString();
-            DisplayAlert("Ваши призовые составили: ", textResult, "ОK") ;
-            /*Notes note = (Notes)BindingContext;
+            DisplayAlert("Ваши призовые составили: ", textResult, "ОK");
 
-            note.Date = DateTime.UtcNow;
-            if (!string.IsNullOrWhiteSpace(note.Text))
-            {
-                await App.NotesDB.SaveNoteAsync(note);
-            }
-
-            await Shell.Current.GoToAsync("..");*/
+            Notes note = new Notes();
+            note.Date = tournamentDateString;
+            note.Money = result;
+            note.IsChecked = false;
+            return note;
 
         }
-
         private async void ButtonCancel_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("..");
         }
-
-        private async void ButtonPrizeMoney_Clicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync(nameof(PrizeMoney));
-        }
-
 
         private void Entry_TextChanged_1(object sender, TextChangedEventArgs e)
         {
@@ -131,6 +136,11 @@ namespace MasterMoney.Views
         private void Entry_TextChanged_2(object sender, TextChangedEventArgs e)
         {
             label2.Text = Match((sender as Xamarin.Forms.Entry).Text);
+        }
+
+        private void ButtonCalculate_Clicked(object sender, EventArgs e)
+        {
+            Calculate();
         }
 
         private void Entry_TextChanged_3(object sender, TextChangedEventArgs e)

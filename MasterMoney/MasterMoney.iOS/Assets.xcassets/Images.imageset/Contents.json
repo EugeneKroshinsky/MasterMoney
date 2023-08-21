@@ -2,11 +2,6 @@
   "images": [
     {
       "appearances": [],
-      "scale": "2x",
-      "idiom": "universal"
-    },
-    {
-      "appearances": [],
       "scale": "3x",
       "idiom": "universal"
     },
@@ -15,6 +10,12 @@
       "scale": "1x",
       "idiom": "universal",
       "filename": "MasterPrizeMoney3.jpg"
+    },
+    {
+      "appearances": [],
+      "scale": "2x",
+      "idiom": "universal",
+      "filename": "MasterCancel1.png"
     }
   ],
   "properties": {},

@@ -20,12 +20,12 @@ namespace MasterMoney.Data
 
         public Task<List<Notes>> GetNotesAsync() 
         {
-             return db.Table<Notes>().ToListAsync();
+            return db.Table<Notes>().ThenByDescending(n => n.Date).ToListAsync();
         }
 
         public Task<Notes> GetNotesByIdAsync(int id) 
         {
-             return db.Table<Notes>().Where(i => i.Id == id).FirstOrDefaultAsync();
+             return db.Table<Notes>().Where(i => i.Id == id).FirstOrDefaultAsync(); 
         }
         public Task<int> SaveNoteAsync(Notes notes)
         {
@@ -39,9 +39,9 @@ namespace MasterMoney.Data
             }
         }
 
-        public Task DeleteNoteAsync(Notes node)
+        public Task DeleteNoteAsync(Notes note)
         {
-            return db.DeleteAsync(node.Id);  
+            return db.DeleteAsync(note);  
         }
     }
 }

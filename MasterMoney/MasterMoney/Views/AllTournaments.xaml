@@ -4,32 +4,40 @@
              x:Class="MasterMoney.Views.AllTournaments"
              xmlns:local="clr-namespace:MasterMoney">
     <StackLayout BackgroundColor="#303030">
+        <Label x:Name="a"/>
         <ScrollView >
             <CollectionView x:Name="сollectionView"
                             Margin="0">
 
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"
-                                       ItemSpacing="0"/>
+                                       ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding Text}"
-                                   TextColor="Black"
-                                   FontSize="Medium"/>
-                            <Label Text="{Binding Date}"
-                                   TextColor="Silver"
-                                   FontSize="Small"/>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding IsChecked}" CheckedChanged="noteCheckBox_CheckedChanged"/>
+                            <Label Text="{Binding Money}"  TextColor="Silver" 
+                                   FontSize="{x:Static local:Constants.LABEL_FONT}"/>
+                            <Label Text="{Binding Date}"   TextColor="Silver" 
+                                   FontSize="{x:Static local:Constants.LABEL_FONT}" HorizontalOptions="EndAndExpand"/>
+                            <Button Clicked="Button_Clicked" ImageSource="MasterCancel.png" HorizontalOptions="EndAndExpand"
+                                    BackgroundColor="#404040"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </ScrollView>
-        
-        <Button Text="Новый турнир" CornerRadius="10" FontSize = "{x:Static local:Constants.BUTTON_FONT}" 
-                        Padding="20, 20, 20, 10" BackgroundColor="#616161" Margin="{x:Static local:Constants.BUTTON_MARGIN}"
-                        TextColor="Cyan" Clicked="AddButton_Clicked" VerticalOptions="EndAndExpand" />
+
+        <Button Text="Добавить турнир" CornerRadius="10" FontSize = "{x:Static local:Constants.BUTTON_FONT}" 
+                        BackgroundColor="#616161" Margin="{x:Static local:Constants.BUTTON_MARGIN}"
+                        TextColor="Cyan" Clicked="AddButton_Clicked" />
+
+        <Button CornerRadius="10" Text="Призовые" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                        Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161"
+                        TextColor="White" Clicked="ButtonPrizeMoney_Clicked"/>
+
+
     </StackLayout>
 </ContentPage>

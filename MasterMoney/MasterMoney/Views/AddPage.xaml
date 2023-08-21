@@ -98,7 +98,7 @@
                        VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" />
                     <Label Text="Лига" TextColor="#FA4081" FontSize="{x:Static local:Constants.LABEL_FONT}"
                        VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" />
-                    <Entry Placeholder="дд.мм.гггг" TextColor="white" PlaceholderColor="#969696"
+                    <DatePicker Format="dd.MM.yy" TextColor="white" 
                            FontSize ="{x:Static local:Constants.LABEL_FONT}" x:Name="dateEntry"
                            VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="0" Grid.Row="1"/>
                     <Picker x:Name="picker" FontSize="{x:Static local:Constants.LABEL_FONT}" TextColor="white"
@@ -115,9 +115,11 @@
                 <Button CornerRadius="10" Text="Добавить турнир" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
                         Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161" 
                         TextColor="Cyan" Clicked="ButtonAddTournament_Clicked"/>
-                <Button CornerRadius="10" Text="Призовые" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
-                        Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161"
-                        TextColor="White" Clicked="ButtonPrizeMoney_Clicked"/>
+
+                <Button CornerRadius="10" Text="Рассчитать" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
+                        Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161" 
+                        TextColor="White" Clicked="ButtonCalculate_Clicked"/>
+
                 <Button CornerRadius="10" Text="Назад" FontSize = "{x:Static local:Constants.BUTTON_FONT}"
                         Margin="{x:Static local:Constants.BUTTON_MARGIN}" BackgroundColor="#616161"
                         TextColor="#FA4081" Clicked="ButtonCancel_Clicked"/>

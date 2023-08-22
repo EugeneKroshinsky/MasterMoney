@@ -20,7 +20,7 @@
                             <CheckBox IsChecked="{Binding IsChecked}" CheckedChanged="noteCheckBox_CheckedChanged"/>
                             <Label Text="{Binding Money}"  TextColor="Silver" 
                                    FontSize="{x:Static local:Constants.LABEL_FONT}"/>
-                            <Label Text="{Binding Date}"   TextColor="Silver" 
+                            <Label Text="{Binding stringDate}"   TextColor="Silver" 
                                    FontSize="{x:Static local:Constants.LABEL_FONT}" HorizontalOptions="EndAndExpand"/>
                             <Button Clicked="Button_Clicked" ImageSource="MasterCancel.png" HorizontalOptions="EndAndExpand"
                                     BackgroundColor="#404040"/>

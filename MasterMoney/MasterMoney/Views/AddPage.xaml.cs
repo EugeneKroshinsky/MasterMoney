@@ -17,9 +17,7 @@ namespace MasterMoney.Views
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public partial class AddPage : ContentPage
     {
-        string tournamentDateString;
-        DateTime tournamentDate;
-        int[] Coefficients;
+        int[] Coefficients; //здесь будут храниться деньги за выигранный матч и выигранный сет в прогиранной игре в разных лигах 
         MasterMoney.GameLogic.Match groupMatch1, groupMatch2, groupMatch3, semifinal, final;
         public string ItemId 
         {
@@ -63,7 +61,6 @@ namespace MasterMoney.Views
         }
         private Notes Calculate()
         {
-            tournamentDateString = dateEntry.Date.ToString("dd.MM.yy");
 
             /*string pattern = @"^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{2}$";
 
@@ -117,7 +114,7 @@ namespace MasterMoney.Views
             DisplayAlert("Ваши призовые составили: ", textResult, "ОK");
 
             Notes note = new Notes();
-            note.Date = tournamentDateString;
+            note.Date = dateEntry.Date;
             note.Money = result;
             note.IsChecked = false;
             return note;
@@ -158,7 +155,7 @@ namespace MasterMoney.Views
             label5.Text = Match((sender as Xamarin.Forms.Entry).Text);
         }
 
-        private string Match(string set)
+        private string Match(string set) //метод для проверки правильности ввода сетов
         {
             if (!int.TryParse(set, out int num))
             {

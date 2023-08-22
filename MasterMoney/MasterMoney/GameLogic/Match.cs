@@ -6,8 +6,13 @@ using System.Text;
 
 namespace MasterMoney.GameLogic
 {
+    //класс для описания игрового матча
+
     public class Match
     {
+        public bool isWin { get; set; }
+        protected int sets;
+        protected int winGame, loseSet; //переменные хранящие сумму денег,которые можно выиграть за игру и проигранный сет
         public Match() 
         {
             Sets = 0;
@@ -21,7 +26,7 @@ namespace MasterMoney.GameLogic
             this.winGame = winGame;
             this.loseSet = loseSet;
         }
-        public virtual int matchMoney()
+        public virtual int matchMoney()//метод для подсчёта выигранных денег
         {
             if (isWin)
             {
@@ -32,9 +37,7 @@ namespace MasterMoney.GameLogic
                 return sets * loseSet;
             }
         }
-        public bool isWin { get; set; }
-        protected int sets;
-        protected int winGame, loseSet;
+
         public int Sets
         {
             set
@@ -64,6 +67,7 @@ namespace MasterMoney.GameLogic
         }
 
     }
+    //класс наследник для финальной игры(игра являетс финальной или за 3м, если выигран полуфинал, иначе за 3м)
 
      class FinalMatch : Match 
     {

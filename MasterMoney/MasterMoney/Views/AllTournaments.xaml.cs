@@ -31,12 +31,6 @@ namespace MasterMoney.Views
         {
             await Shell.Current.GoToAsync(nameof(PrizeMoney));
         }
-
-        /*private void сollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }*/
-
         private async void Button_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -56,11 +50,6 @@ namespace MasterMoney.Views
                 selectedItem.IsChecked = e.Value;
                 await App.NotesDB.SaveNoteAsync(selectedItem);
             }
-        }
-
-        private void сollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
